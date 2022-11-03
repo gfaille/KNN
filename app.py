@@ -53,8 +53,8 @@ if st.button("rechercher") :
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     st.write(tableau_affiche)
-    graph1 = sns.scatterplot(tableau_affiche, x='sepal_length', y='sepal_width', hue='species')
-    graph2 = sns.scatterplot(tableau_affiche, x='petal_length', y='petal_width', hue='species')
+    graph1 = sns.FacetGrid(tableau_affiche, hue='species').map(plt.scatter, 'sepal_length', 'sepal_width').add_legend()
+    graph2 = sns.FacetGrid(tableau_affiche, hue='species').map(plt.scatter, 'petal_length', 'petal_width').add_legend()
     col1.pyplot(graph1)
     col2.pyplot(graph2)
 
