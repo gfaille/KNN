@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from matplotlib.colors import ListedColormap
 from sklearn.neighbors import KNeighborsClassifier
 
-tableau = pd.read_csv("data.csv", sep=",")
+tableau = pd.read_csv("data.csv", sep=";")
 
 # entrainner l'ia a predire 
 X = tableau[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
